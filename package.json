@@ -1,8 +1,12 @@
 {
-  "name": "graphql-sample",
-  "packageManager": "yarn@3.1.0",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+	"name": "graphql-sample",
+	"packageManager": "yarn@3.1.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"dev:client": "cd packages/client && yarn start",
+		"dev:server": "cd packages/server && yarn dev"
+	}
 }
