@@ -8,5 +8,8 @@
 	"scripts": {
 		"dev:client": "cd packages/client && yarn start",
 		"dev:server": "cd packages/server && yarn dev"
+	},
+	"devDependencies": {
+		"typescript": "^4.4.4"
 	}
 }
