@@ -12,7 +12,12 @@ const App = () => {
     return <Typography>An error occured: {error.message}</Typography>;
   }
 
-  return <Typography>{data?.showMessage}</Typography>;
+  return (
+    <>
+      <Typography>{data?.showMessage.message}</Typography>
+      <Typography>{data?.showMessage.__typename}</Typography>
+    </>
+  );
 };
 
 export default App;

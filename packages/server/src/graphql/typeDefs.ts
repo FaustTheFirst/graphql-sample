@@ -1,7 +1,13 @@
-import { gql } from 'apollo-server-express';
-
-export default gql`
-  type Query {
-    showMessage: String
+const TestReq = `
+  type TestReq {
+    message: String
   }
 `;
+
+const Query = `
+  type Query {
+    showMessage: TestReq
+  }
+`;
+
+export default [Query, TestReq];

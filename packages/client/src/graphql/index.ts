@@ -1,11 +1,16 @@
 import { gql } from '@apollo/client';
 
 export interface IHelloMessage {
-  showMessage: string;
+  showMessage: {
+    message: string;
+    __typename: string;
+  };
 }
 
 export const HELLO_MESSAGE = gql`
-  query Query {
-    showMessage
+  query TestReq {
+    showMessage {
+      message
+    }
   }
 `;

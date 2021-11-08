@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import cors from 'cors';
+import { makeExecutableSchema } from '@graphql-tools/schema';
 import resolvers from './graphql/resolvers';
 import typeDefs from './graphql/typeDefs';
 
@@ -11,8 +12,7 @@ const startServer = async () => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema: makeExecutableSchema({ typeDefs, resolvers }),
   });
   await server.start();
   server.applyMiddleware({ app });
